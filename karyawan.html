@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ms">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Peluang Bisnes Karyawan</title>
+    <title>Peluang Bisnis Karyawan</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
@@ -13,35 +13,56 @@
 </head>
 <body class="min-h-screen flex flex-col items-center p-5 pt-12 pb-20">
     <div class="max-w-2xl w-full bg-slate-800 rounded-2xl border border-slate-700 shadow-xl overflow-hidden relative">
+        
+        <!-- Header -->
         <div class="bg-blue-600 p-6 md:p-8 text-center">
-            <span class="bg-white text-blue-800 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-3 inline-block">Khas Untuk Pekerja</span>
-            <h1 class="text-2xl md:text-3xl font-black text-white font-m uppercase leading-tight">Gaji Selalu Habis Tengah Bulan?</h1>
+            <span class="bg-white text-blue-800 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-3 inline-block">Khusus Karyawan</span>
+            <h1 class="text-2xl md:text-3xl font-black text-white font-m uppercase leading-tight">Gaji Selalu Numpang Lewat Tiap Bulan?</h1>
         </div>
         
+        <!-- Konten -->
         <div class="p-6 md:p-8 space-y-6">
             <div class="space-y-4">
-                <h2 class="text-xl font-bold text-amber-400 font-m">Jujur Cakap, Ini Masalah Anda Kan?</h2>
+                <h2 class="text-xl font-bold text-amber-400 font-m">Jujur Saja, Ini Masalah Anda Kan?</h2>
                 <ul class="space-y-3 text-slate-300 text-sm">
-                    <li class="flex items-start gap-3"><span class="text-red-500">❌</span> Kerja bertahun-tahun tapi simpanan masih sifar.</li>
-                    <li class="flex items-start gap-3"><span class="text-red-500">❌</span> Nak mula bisnes tambahan tapi takut ganggu waktu kerja pejabat.</li>
-                    <li class="flex items-start gap-3"><span class="text-red-500">❌</span> Penat dengan rutin pergi pagi balik petang tapi kewangan tidak berubah.</li>
+                    <li class="flex items-start gap-3"><span class="text-red-500 text-lg">❌</span> Kerja bertahun-tahun tapi tabungan/aset masih nol.</li>
+                    <li class="flex items-start gap-3"><span class="text-red-500 text-lg">❌</span> Mau mulai bisnis sampingan tapi takut mengganggu jam kerja kantor.</li>
+                    <li class="flex items-start gap-3"><span class="text-red-500 text-lg">❌</span> Capek dengan rutinitas berangkat pagi pulang malam, tapi finansial segitu-gitu saja.</li>
                 </ul>
             </div>
 
-            <div class="bg-slate-900 p-5 rounded-xl border border-emerald-500/30">
+            <div class="bg-slate-900 p-5 rounded-xl border border-emerald-500/30 shadow-inner">
                 <h2 class="text-lg font-bold text-emerald-400 font-m mb-2">Ini Solusi Untuk Anda!</h2>
                 <p class="text-sm text-slate-300 leading-relaxed">
-                    Kini anda boleh bina sumber pendapatan kedua hanya dari telefon bimbit. Dengan sistem sokongan dan produk yang terbukti berkesan, anda boleh menjana pendapatan tambahan secara fleksibel tanpa perlu meninggalkan kerja hakiki anda.
+                    Kini Anda bisa membangun sumber pendapatan kedua (Double Income) hanya bermodal smartphone. Dengan sistem yang terbukti dan otomatis, Anda bisa menjalankan bisnis secara fleksibel tanpa harus meninggalkan pekerjaan utama Anda.
                 </p>
             </div>
 
+            <!-- Tombol CTA -->
             <div class="text-center pt-4">
-                <p class="text-xs text-slate-400 mb-3">Ambil langkah pertama untuk ubah kewangan anda hari ini!</p>
-                <a href="https://wa.me/628XXXXXXXXXX?text=Halo,%20saya%20berminat%20dengan%20Peluang%20Bisnes%20Karyawan.%20Mohon%20info%20lanjut." class="inline-block w-full bg-amber-500 hover:bg-amber-400 text-slate-900 font-black py-4 rounded-xl shadow-[0_0_15px_rgba(245,158,11,0.3)] transition uppercase tracking-widest text-sm font-m">
-                    📲 KONSULTASI PERCUMA DI SINI
+                <p class="text-xs text-slate-400 mb-3">Ambil langkah pertama ubah finansial Anda hari ini!</p>
+                <!-- ID btnWA penting untuk ditangkap oleh script Javascript di bawah -->
+                <a id="btnWA" href="#" class="inline-block w-full bg-amber-500 hover:bg-amber-400 text-slate-900 font-black py-4 rounded-xl shadow-[0_0_15px_rgba(245,158,11,0.3)] transition uppercase tracking-widest text-sm font-m">
+                    📲 KONSULTASI GRATIS DI SINI
                 </a>
             </div>
         </div>
     </div>
+
+    <!-- SCRIPT OTOMATISASI PARAMETER URL (KUDA TROYA) -->
+    <script>
+        // 1. Tangkap parameter dari link (contoh: ?wa=62812...&name=Sugiarto)
+        const urlParams = new URLSearchParams(window.location.search);
+        // 2. Jika tidak ada parameter WA, gunakan nomor default Ndan sebagai jaring pengaman
+        const nomorWA = urlParams.get('wa') || '628XXXXXXXXXX'; // <-- Ganti dengan no WA asli Ndan
+        // 3. Jika tidak ada parameter nama, gunakan sapaan umum
+        const namaPanggilan = urlParams.get('name') || 'Kak'; 
+
+        // 4. Buat isi pesan otomatisnya
+        const pesan = `Halo ${namaPanggilan}, saya sudah membaca webnya dan berminat dengan Peluang Bisnis Karyawan. Mohon info lengkapnya.`;
+        
+        // 5. Ubah link tombol secara ajaib (otomatis)
+        document.getElementById('btnWA').href = `https://wa.me/${nomorWA}?text=${encodeURIComponent(pesan)}`;
+    </script>
 </body>
 </html>
