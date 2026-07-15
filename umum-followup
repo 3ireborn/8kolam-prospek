@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kolam Peluang Umum - NPA Smart System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Poppins', sans-serif; background-color: #0f172a; color: white; }
+        .font-m { font-family: 'Montserrat', sans-serif; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center pb-10">
+
+    <!-- Header Section -->
+    <div class="w-full bg-slate-900 border-b border-slate-800 p-6 pt-12 pb-16 text-center shadow-xl relative overflow-hidden">
+        <div class="absolute top-[-50px] left-[-50px] w-40 h-40 bg-rose-500 rounded-full blur-[90px] opacity-20"></div>
+        <div class="max-w-3xl mx-auto relative z-10 space-y-4">
+            <a href="index.html" class="inline-block bg-slate-800 text-slate-300 hover:text-white font-bold px-4 py-2 rounded-lg text-xs mb-4 border border-slate-700 transition">
+                &larr; KEMBALI KE DASHBOARD
+            </a>
+            <h1 class="text-3xl md:text-5xl font-black text-white font-m uppercase tracking-wider">
+                Kolam <span class="text-rose-400">Peluang Umum</span>
+            </h1>
+            <p class="text-sm md:text-base text-slate-300 font-light">
+                Pola copywriting Kuda Troya halus untuk masyarakat umum yang mencari penghasilan tambahan.
+            </p>
+        </div>
+    </div>
+
+    <!-- Content Section -->
+    <div class="max-w-3xl w-full p-5 mt-6 relative z-20 space-y-6">
+        
+        <!-- Copywriting Card 1 -->
+        <div class="bg-slate-800 p-6 rounded-2xl border border-slate-700 shadow-lg">
+            <h2 class="text-xl font-bold text-amber-400 font-m mb-2">Pola 1: Pendekatan Kasual (Teman Lama / Sahabat)</h2>
+            <p class="text-xs text-slate-400 mb-4">Gunakan script ini untuk teman lama yang sudah lama tidak saling sapa.</p>
+            
+            <div class="bg-slate-900 p-4 rounded-xl border border-slate-700 relative">
+                <p id="teks1" class="text-sm text-slate-300 whitespace-pre-line leading-relaxed">Halo [Nama], apa kabar nih? Udah lama nggak ngobrol ya.
+                
+                Eh, gue lagi jalanin project bisnis online nih, sistemnya udah disediain semua dan ada bimbingannya dari nol. Lumayan banget buat nambah pemasukan bermodal HP doang.
+                
+                Kalo lu lagi nyari peluang tambahan atau sekadar pengen tau buat cadangan income, kabarin ya, nanti gue share infonya.</p>
+            </div>
+            
+            <button onclick="copyText('teks1', this)" class="mt-4 w-full bg-amber-500 hover:bg-amber-400 text-slate-900 font-bold py-3 rounded-xl transition uppercase text-sm font-m flex justify-center items-center gap-2">
+                <span>📋</span> Salin Teks Ini
+            </button>
+        </div>
+
+        <!-- Copywriting Card 2 -->
+        <div class="bg-slate-800 p-6 rounded-2xl border border-slate-700 shadow-lg">
+            <h2 class="text-xl font-bold text-amber-400 font-m mb-2">Pola 2: Pendekatan Direct (Massal / Kontak Baru)</h2>
+            <p class="text-xs text-slate-400 mb-4">Gunakan script ini untuk list kontak baru atau orang yang baru simpan nomor Anda.</p>
+            
+            <div class="bg-slate-900 p-4 rounded-xl border border-slate-700 relative">
+                <p id="teks2" class="text-sm text-slate-300 whitespace-pre-line leading-relaxed">Halo Kak [Nama], salam kenal. Maaf mengganggu waktunya sebentar.
+                
+                Saya sedang mencari beberapa orang yang serius ingin membangun sumber penghasilan tambahan melalui bisnis digital. Sistem kami sangat ramah pemula dan bisa dikerjakan darimana saja tanpa mengganggu aktivitas utama.
+                
+                Jika Kakak sedang mencari peluang atau open mind terhadap income tambahan, saya izin membagikan detail sistemnya.</p>
+            </div>
+            
+            <button onclick="copyText('teks2', this)" class="mt-4 w-full bg-amber-500 hover:bg-amber-400 text-slate-900 font-bold py-3 rounded-xl transition uppercase text-sm font-m flex justify-center items-center gap-2">
+                <span>📋</span> Salin Teks Ini
+            </button>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="w-full text-center mt-12 mb-6">
+        <p class="text-slate-500 text-xs font-light">
+            &copy; 2026 NPA Smart System.<br>
+            <span class="font-m font-bold">Developed by Sugiarto Kurniawan</span>
+        </p>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        function copyText(elementId, btnElement) {
+            const textToCopy = document.getElementById(elementId).innerText;
+            const originalBtnText = btnElement.innerHTML;
+            
+            navigator.clipboard.writeText(textToCopy).then(() => {
+                btnElement.innerHTML = '<span>✅</span> Berhasil Disalin!';
+                btnElement.classList.replace('bg-amber-500', 'bg-green-500');
+                btnElement.classList.replace('hover:bg-amber-400', 'hover:bg-green-400');
+                btnElement.classList.replace('text-slate-900', 'text-white');
+                
+                setTimeout(() => {
+                    btnElement.innerHTML = originalBtnText;
+                    btnElement.classList.replace('bg-green-500', 'bg-amber-500');
+                    btnElement.classList.replace('hover:bg-green-400', 'hover:bg-amber-400');
+                    btnElement.classList.replace('text-white', 'text-slate-900');
+                }, 2000);
+            }).catch(err => {
+                console.error('Gagal menyalin teks: ', err);
+                alert('Ups, gagal menyalin teks. Silakan coba lagi.');
+            });
+        }
+    </script>
+</body>
+</html>
