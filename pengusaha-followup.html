@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kolam Pengusaha - NPA Smart System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Poppins', sans-serif; background-color: #0f172a; color: white; }
+        .font-m { font-family: 'Montserrat', sans-serif; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center pb-10">
+
+    <!-- Header Section -->
+    <div class="w-full bg-slate-900 border-b border-slate-800 p-6 pt-12 pb-16 text-center shadow-xl relative overflow-hidden">
+        <div class="absolute top-[-50px] left-[-50px] w-40 h-40 bg-amber-500 rounded-full blur-[90px] opacity-20"></div>
+        <div class="max-w-3xl mx-auto relative z-10 space-y-4">
+            <a href="index.html" class="inline-block bg-slate-800 text-slate-300 hover:text-white font-bold px-4 py-2 rounded-lg text-xs mb-4 border border-slate-700 transition">
+                &larr; KEMBALI KE DASHBOARD
+            </a>
+            <h1 class="text-3xl md:text-5xl font-black text-white font-m uppercase tracking-wider">
+                Kolam <span class="text-amber-400">Pengusaha</span>
+            </h1>
+            <p class="text-sm md:text-base text-slate-300 font-light">
+                Pola copywriting elegan untuk pebisnis dengan pendekatan diversifikasi aset (Ban Serep).
+            </p>
+        </div>
+    </div>
+
+    <!-- Content Section -->
+    <div class="max-w-3xl w-full p-5 mt-6 relative z-20 space-y-6">
+        
+        <!-- Copywriting Card 1 -->
+        <div class="bg-slate-800 p-6 rounded-2xl border border-slate-700 shadow-lg">
+            <h2 class="text-xl font-bold text-amber-400 font-m mb-2">Pola 1: Pendekatan Kasual (Sesama Pebisnis)</h2>
+            <p class="text-xs text-slate-400 mb-4">Gunakan script ini untuk relasi bisnis yang sudah Anda kenal cukup dekat.</p>
+            
+            <div class="bg-slate-900 p-4 rounded-xl border border-slate-700 relative">
+                <p id="teks1" class="text-sm text-slate-300 whitespace-pre-line leading-relaxed">Halo Pak/Bu [Nama], gimana perkembangan usahanya? Semoga makin cuan ya!
+                
+                Oh ya, belakangan ini saya lagi diversifikasi aset ke sebuah project digital nih. Sistemnya bagus banget buat jadi 'ban serep' atau dana darurat kalau bisnis lagi up and down, tanpa pusing mikirin operasional.
+                
+                Kalo lagi santai, kita ngopi yuk sambil saya kasih lihat konsepnya. Siapa tau cocok buat nambah portofolio Bapak/Ibu.</p>
+            </div>
+            
+            <button onclick="copyText('teks1', this)" class="mt-4 w-full bg-amber-500 hover:bg-amber-400 text-slate-900 font-bold py-3 rounded-xl transition uppercase text-sm font-m flex justify-center items-center gap-2">
+                <span>📋</span> Salin Teks Ini
+            </button>
+        </div>
+
+        <!-- Copywriting Card 2 -->
+        <div class="bg-slate-800 p-6 rounded-2xl border border-slate-700 shadow-lg">
+            <h2 class="text-xl font-bold text-amber-400 font-m mb-2">Pola 2: Pendekatan Formal / Direct (Cold Market)</h2>
+            <p class="text-xs text-slate-400 mb-4">Gunakan script ini untuk pemilik usaha yang baru Anda kenal secara profesional.</p>
+            
+            <div class="bg-slate-900 p-4 rounded-xl border border-slate-700 relative">
+                <p id="teks2" class="text-sm text-slate-300 whitespace-pre-line leading-relaxed">Selamat [pagi/siang] Pak/Bu [Nama]. Perkenalkan saya [Nama Anda].
+                
+                Saya mengamati profil Bapak/Ibu sebagai pebisnis yang luar biasa. Saya saat ini sedang berekspansi mengedukasi para pengusaha mengenai instrumen diversifikasi aset untuk meminimalisir resiko bisnis konvensional dan mengamankan cashflow.
+                
+                Jika Bapak/Ibu berkenan, saya ingin berdiskusi singkat dan membagikan konsepnya. Mohon info waktu luangnya.</p>
+            </div>
+            
+            <button onclick="copyText('teks2', this)" class="mt-4 w-full bg-amber-500 hover:bg-amber-400 text-slate-900 font-bold py-3 rounded-xl transition uppercase text-sm font-m flex justify-center items-center gap-2">
+                <span>📋</span> Salin Teks Ini
+            </button>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="w-full text-center mt-12 mb-6">
+        <p class="text-slate-500 text-xs font-light">
+            &copy; 2026 NPA Smart System.<br>
+            <span class="font-m font-bold">Developed by Sugiarto Kurniawan</span>
+        </p>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        function copyText(elementId, btnElement) {
+            const textToCopy = document.getElementById(elementId).innerText;
+            const originalBtnText = btnElement.innerHTML;
+            
+            navigator.clipboard.writeText(textToCopy).then(() => {
+                btnElement.innerHTML = '<span>✅</span> Berhasil Disalin!';
+                btnElement.classList.replace('bg-amber-500', 'bg-green-500');
+                btnElement.classList.replace('hover:bg-amber-400', 'hover:bg-green-400');
+                btnElement.classList.replace('text-slate-900', 'text-white');
+                
+                setTimeout(() => {
+                    btnElement.innerHTML = originalBtnText;
+                    btnElement.classList.replace('bg-green-500', 'bg-amber-500');
+                    btnElement.classList.replace('hover:bg-green-400', 'hover:bg-amber-400');
+                    btnElement.classList.replace('text-white', 'text-slate-900');
+                }, 2000);
+            }).catch(err => {
+                console.error('Gagal menyalin teks: ', err);
+                alert('Ups, gagal menyalin teks. Silakan coba lagi.');
+            });
+        }
+    </script>
+</body>
+</html>
+
